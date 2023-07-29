@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Integration</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <!-- Your login form here -->
+    <input type="text" id="telegramUsername" placeholder="Your Telegram Username">
+    <button onclick="sendMessage()">Send Result to Telegram</button>
+
+    <script>
+        function sendMessage() {
+            const token = '6419661109:AAHXg6Z2OE2csBSTfEE-p8noHKOg9mowFLg';
+            const username = document.getElementById('telegramUsername').value;
+            const message = 'Your login was successful!';
+
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${username}&text=${message}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert('Result sent to Telegram!');
+                    } else {
+                        alert('Failed to send the result. Please check your Telegram username.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error sending the message:', error);
+                });
+        }
+    </script>
+</body>
+</html>
