@@ -1,0 +1,23 @@
+body {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+.container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+input[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
